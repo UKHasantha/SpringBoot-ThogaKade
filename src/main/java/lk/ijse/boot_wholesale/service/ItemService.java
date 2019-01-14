@@ -3,7 +3,6 @@ package lk.ijse.boot_wholesale.service;
 import java.util.ArrayList;
 
 import lk.ijse.boot_wholesale.dto.ItemDTO;
-import lk.ijse.boot_wholesale.entity.Item;
 
 public interface ItemService {
 	 	public ArrayList<ItemDTO> getAllItems();

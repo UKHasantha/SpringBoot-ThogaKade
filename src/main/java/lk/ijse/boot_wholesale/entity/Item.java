@@ -2,20 +2,22 @@ package lk.ijse.boot_wholesale.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Item")
 public class Item {
 	@Id
 	private String itemId;
 	private String itemName;
-	private String itemQty;
+	private int itemQty;
 	private double itemPrice;
 	
 	public Item() {
 		super();
 	}
 
-	public Item(String itemId, String itemName, String itemQty, double itemPrice) {
+	public Item(String itemId, String itemName, int itemQty, double itemPrice) {
 		super();
 		this.itemId = itemId;
 		this.itemName = itemName;
@@ -27,28 +29,28 @@ public class Item {
 		return itemId;
 	}
 
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
-	}
-
 	public String getItemName() {
 		return itemName;
+	}
+
+	public int getItemQty() {
+		return itemQty;
+	}
+
+	public double getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
 	}
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
-	public String getItemQty() {
-		return itemQty;
-	}
-
-	public void setItemQty(String itemQty) {
+	public void setItemQty(int itemQty) {
 		this.itemQty = itemQty;
-	}
-
-	public double getItemPrice() {
-		return itemPrice;
 	}
 
 	public void setItemPrice(double itemPrice) {
@@ -60,7 +62,5 @@ public class Item {
 		return "Item [itemId=" + itemId + ", itemName=" + itemName + ", itemQty=" + itemQty + ", itemPrice=" + itemPrice
 				+ "]";
 	}
-
 	
-
 }
