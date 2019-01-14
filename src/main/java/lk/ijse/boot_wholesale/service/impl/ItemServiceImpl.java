@@ -2,11 +2,8 @@ package lk.ijse.boot_wholesale.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import lk.ijse.boot_wholesale.dto.ItemDTO;
 import lk.ijse.boot_wholesale.entity.Item;
 import lk.ijse.boot_wholesale.repository.ItemRepository;
@@ -23,7 +20,7 @@ public class ItemServiceImpl implements ItemService{
 		ArrayList<ItemDTO> AllItems=new ArrayList<>();
 		List<Item> items=itemRepository.findAll();
 		for (Item item : items) {
-			ItemDTO itemDTO=new ItemDTO(item.getItemId(),item.getItemName(),item.getItemQty(),item.getItemPrice());
+			ItemDTO itemDTO=new ItemDTO(item.getCode(),item.getDiscription(),item.getUnitPrice(),item.getQtyOnHand());
 			AllItems.add(itemDTO);
 			}
 		return AllItems;
@@ -31,7 +28,8 @@ public class ItemServiceImpl implements ItemService{
 
 	@Override
 	public boolean saveItem(ItemDTO itemDTO) {
-		Item item=new Item(itemDTO.getItemId(),itemDTO.getItemName(),itemDTO.getItemQty(),itemDTO.getItemPrice());
+		Item item=new Item(itemDTO.getCode(),itemDTO.getDiscription(),itemDTO.getUnitPrice(),itemDTO.getQtyOnHand());
+		System.out.println("Item:Service:="+itemDTO);
 		itemRepository.save(item);
 		return true;
 	}
@@ -52,10 +50,10 @@ public class ItemServiceImpl implements ItemService{
 	public ItemDTO searchItem(String itemId) {
 		Item item=itemRepository.findById(itemId).get();
 		ItemDTO itemDTO=new ItemDTO();
-		itemDTO.getItemId();
-		itemDTO.getItemName();
-		itemDTO.getItemQty();
-		itemDTO.getItemQty();
+		itemDTO.getCode();
+		itemDTO.getDiscription();
+		itemDTO.getUnitPrice();
+		itemDTO.getQtyOnHand();
 		return itemDTO;
 	}
 

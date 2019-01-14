@@ -55,6 +55,4 @@ public class AdminDTO {
 		return "AdminDTO [adminId=" + adminId + ", adminName=" + adminName + ", adminEmail=" + adminEmail
 				+ ", adminPassword=" + adminPassword + "]";
 	}
-
-	
 }

@@ -7,7 +7,7 @@ public class UserDTO {
 	private String userName;
 	private String userContact;
 	private String userAddress;
-    private ArrayList<OrderDTO> orderDTOs;
+    private ArrayList<OrdersDTO> ordersDTOs;
 	
 	public UserDTO() {
 		super();
@@ -37,8 +37,8 @@ public class UserDTO {
 		return userAddress;
 	}
 
-	public ArrayList<OrderDTO> getOrderDTOs() {
-		return orderDTOs;
+	public ArrayList<OrdersDTO> getOrderDTOs() {
+		return ordersDTOs;
 	}
 
 	public void setUserId(String userId) {
@@ -57,14 +57,14 @@ public class UserDTO {
 		this.userAddress = userAddress;
 	}
 
-	public void setOrderDTOs(ArrayList<OrderDTO> orderDTOs) {
-		this.orderDTOs = orderDTOs;
+	public void setOrderDTOs(ArrayList<OrdersDTO> ordersDTOs) {
+		this.ordersDTOs = ordersDTOs;
 	}
 
 	@Override
 	public String toString() {
 		return "UserDTO [userId=" + userId + ", userName=" + userName + ", userContact=" + userContact
-				+ ", userAddress=" + userAddress + ", orderDTOs=" + orderDTOs + "]";
+				+ ", userAddress=" + userAddress + ", orderDTOs=" + ordersDTOs + "]";
 	}
 	
 }

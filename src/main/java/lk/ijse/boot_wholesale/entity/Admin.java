@@ -2,10 +2,8 @@ package lk.ijse.boot_wholesale.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="Admin")
 public class Admin {
 	@Id
 	private String adminId;

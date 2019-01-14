@@ -1,24 +1,18 @@
-package lk.ijse.boot_wholesale.entity;
+package lk.ijse.boot_wholesale.dto;
 
-import java.io.Serializable;
-import javax.persistence.Embeddable;
-
-@Embeddable
-public class DetailOrders_PK implements Serializable{
-
+public class DetailOrder_PKDTO {
 	private String code;
 	private String oID;
 	
-	public DetailOrders_PK() {
+	
+	public DetailOrder_PKDTO() {
 		super();
 	}
-	
-	public DetailOrders_PK(String code, String oID) {
+	public DetailOrder_PKDTO(String code, String oID) {
 		super();
 		this.code = code;
 		this.oID = oID;
 	}
-
 	public String getCode() {
 		return code;
 	}
@@ -33,7 +27,7 @@ public class DetailOrders_PK implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "DetailOrders_PK [code=" + code + ", oID=" + oID + "]";
+		return "DetailOrder_PKDTO [code=" + code + ", oID=" + oID + "]";
 	}
 	
 	

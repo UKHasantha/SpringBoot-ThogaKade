@@ -55,8 +55,9 @@ public class AdminServiceImpl implements AdminService{
 		adminDTO.getAdminId();
 		adminDTO.getAdminName();
 		adminDTO.getAdminEmail();
-		return null;
+		return adminDTO;
 	}
+	
 	 @Override
 	 public boolean updateAdmin(AdminDTO adminDTO) {
 		 Admin admin = new Admin();

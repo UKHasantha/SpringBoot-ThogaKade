@@ -1,5 +1,7 @@
 package lk.ijse.boot_wholesale.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -8,16 +10,17 @@ import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class OrderDetails {
+public class OrderDetails implements Serializable{
 
-	private String odDate;
-	
+	private int quantity;
+	private double unitprice;
+	  
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumns(@JoinColumn(name="orderid",referencedColumnName="orderid",insertable=false,updatable=false))
+	@JoinColumns(@JoinColumn(name="oID",referencedColumnName="oID",insertable=false,updatable=false))
 	private Orders order;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumns(@JoinColumn(name="itemid",referencedColumnName="itemid",insertable=false,updatable=false))
+	@JoinColumns(@JoinColumn(name="code",referencedColumnName="code",insertable=false,updatable=false))
 	private Item item;
 		
 	@EmbeddedId
@@ -27,16 +30,21 @@ public class OrderDetails {
 		super();
 	}
 
-	public OrderDetails(String odDate, Orders order, Item item, DetailOrders_PK orderDetails_PK) {
+	public OrderDetails(int quantity, double unitprice, Orders order, Item item, DetailOrders_PK orderDetails_PK) {
 		super();
-		this.odDate = odDate;
+		this.quantity = quantity;
+		this.unitprice = unitprice;
 		this.order = order;
 		this.item = item;
 		this.orderDetails_PK = orderDetails_PK;
 	}
 
-	public String getOdDate() {
-		return odDate;
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public double getUnitprice() {
+		return unitprice;
 	}
 
 	public Orders getOrder() {
@@ -51,8 +59,12 @@ public class OrderDetails {
 		return orderDetails_PK;
 	}
 
-	public void setOdDate(String odDate) {
-		this.odDate = odDate;
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public void setUnitprice(double unitprice) {
+		this.unitprice = unitprice;
 	}
 
 	public void setOrder(Orders order) {
@@ -69,8 +81,8 @@ public class OrderDetails {
 
 	@Override
 	public String toString() {
-		return "OrderDetails [odDate=" + odDate + ", order=" + order + ", item=" + item + ", orderDetails_PK="
-				+ orderDetails_PK + "]";
+		return "OrderDetails [quantity=" + quantity + ", unitprice=" + unitprice + ", order=" + order + ", item=" + item
+				+ ", orderDetails_PK=" + orderDetails_PK + "]";
 	}
 	
 }

@@ -1,59 +1,59 @@
 package lk.ijse.boot_wholesale.dto;
 
 public class ItemDTO {
-	private String itemId;
-	private String itemName;
-	private int itemQty;
-	private double itemPrice;
+	private String code;
+	private String discription;
+	private Double unitPrice;
+	private int QtyOnHand;
 	
 	public ItemDTO() {
 		super();
 	}
 
-	public ItemDTO(String itemId, String itemName, int itemQty, double itemPrice) {
+	public ItemDTO(String code, String discription, Double unitPrice, int qtyOnHand) {
 		super();
-		this.itemId = itemId;
-		this.itemName = itemName;
-		this.itemQty = itemQty;
-		this.itemPrice = itemPrice;
+		this.code = code;
+		this.discription = discription;
+		this.unitPrice = unitPrice;
+		QtyOnHand = qtyOnHand;
 	}
 
-	public String getItemId() {
-		return itemId;
+	public String getCode() {
+		return code;
 	}
 
-	public String getItemName() {
-		return itemName;
+	public String getDiscription() {
+		return discription;
 	}
 
-	public int getItemQty() {
-		return itemQty;
+	public Double getUnitPrice() {
+		return unitPrice;
 	}
 
-	public double getItemPrice() {
-		return itemPrice;
+	public int getQtyOnHand() {
+		return QtyOnHand;
 	}
 
-	public void setItemId(String itemId) {
-		this.itemId = itemId;
+	public void setCode(String code) {
+		this.code = code;
 	}
 
-	public void setItemName(String itemName) {
-		this.itemName = itemName;
+	public void setDiscription(String discription) {
+		this.discription = discription;
 	}
 
-	public void setItemQty(int itemQty) {
-		this.itemQty = itemQty;
+	public void setUnitPrice(Double unitPrice) {
+		this.unitPrice = unitPrice;
 	}
 
-	public void setItemPrice(double itemPrice) {
-		this.itemPrice = itemPrice;
+	public void setQtyOnHand(int qtyOnHand) {
+		QtyOnHand = qtyOnHand;
 	}
 
 	@Override
 	public String toString() {
-		return "ItemDTO [itemId=" + itemId + ", itemName=" + itemName + ", itemQty=" + itemQty + ", itemPrice="
-				+ itemPrice + "]";
-	}	
+		return "ItemDTO [code=" + code + ", discription=" + discription + ", unitPrice=" + unitPrice + ", QtyOnHand="
+				+ QtyOnHand + "]";
+	}
 	
 }

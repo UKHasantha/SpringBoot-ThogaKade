@@ -6,10 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name="User")
 public class User {
 	@Id
 	private String userId;
@@ -20,6 +18,10 @@ public class User {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Orders> orders;
 	
+	public User() {
+		super();
+	}
+
 	public User(String userId, String userName, String userContact, String userAddress) {
 		super();
 		this.userId = userId;

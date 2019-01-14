@@ -24,6 +24,7 @@ public class ItemController {
 	
 	@PostMapping
 	public boolean saveItem(@RequestBody ItemDTO itemDTO) {
+		System.out.println("Item:"+itemDTO);
 		return itemService.saveItem(itemDTO);
 	}
 	
