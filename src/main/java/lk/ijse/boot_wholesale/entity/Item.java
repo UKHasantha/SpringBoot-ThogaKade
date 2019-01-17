@@ -20,7 +20,7 @@ public class Item {
 		this.code = code;
 		this.discription = discription;
 		this.unitPrice = unitPrice;
-		QtyOnHand = qtyOnHand;
+		this.QtyOnHand = qtyOnHand;
 	}
 
 	public String getCode() {

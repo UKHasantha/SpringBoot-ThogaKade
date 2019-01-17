@@ -16,7 +16,7 @@ import lk.ijse.boot_wholesale.service.UserService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/users")
+@RequestMapping("api/v1/users")
 public class UserController {
 	
 	@Autowired
@@ -24,6 +24,7 @@ public class UserController {
 	
 	@PostMapping
 	public boolean saveUser(@RequestBody UserDTO userDTO) {
+		System.out.println("dto :"+userDTO);
 		return userService.saveUser(userDTO);
 	}
 	
