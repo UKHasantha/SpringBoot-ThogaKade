@@ -4,12 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
 import lk.ijse.boot_wholesale.dto.ItemDTO;
 import lk.ijse.boot_wholesale.entity.Item;
 import lk.ijse.boot_wholesale.repository.ItemRepository;
 import lk.ijse.boot_wholesale.service.ItemService;
 
 @Service
+@Transactional(propagation=Propagation.REQUIRED)
 public class ItemServiceImpl implements ItemService{
 	
 	@Autowired
